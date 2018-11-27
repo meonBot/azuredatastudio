@@ -510,6 +510,13 @@ class ComponentWrapper implements sqlops.Component {
 		this.setProperty('required', v);
 	}
 
+	public get CSSStyles(): { [key: string]: string; } {
+		return this.properties['CSSStyles'];
+	}
+	public set CSSStyles(v: { [key: string]: string; }) {
+		this.setProperty('CSSStyles', v);
+	}
+
 	public toComponentShape(): IComponentShape {
 		return <IComponentShape>{
 			id: this.id,
