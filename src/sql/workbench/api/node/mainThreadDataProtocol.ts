@@ -319,6 +319,12 @@ export class MainThreadDataProtocol implements MainThreadDataProtocolShape {
 			},
 			disconnectSession(sessionId: string): Thenable<boolean> {
 				return TPromise.as(true);
+			},
+			filterSession(sessionId: string, filter: sqlops.ProfilerFilter):Thenable<boolean> {
+				return self._proxy.$filterSession(handle, sessionId, filter);
+			},
+			clearSessionFilter(sessionId: string):Thenable<boolean> {
+				return self._proxy.$clearSessionFilter(handle, sessionId);
 			}
 		});
 

@@ -1794,7 +1794,8 @@ declare module 'sqlops' {
 		getXEventSessions(sessionId: string): Thenable<string[]>;
 		connectSession(sessionId: string): Thenable<boolean>;
 		disconnectSession(sessionId: string): Thenable<boolean>;
-
+		filterSession(sessionId: string, filter: ProfilerFilter): Thenable<boolean>;
+		clearSessionFilter(sessionId: string): Thenable<boolean>;
 		registerOnSessionEventsAvailable(handler: (response: ProfilerSessionEvents) => any): void;
 		registerOnSessionStopped(handler: (response: ProfilerSessionStoppedParams) => any): void;
 		registerOnProfilerSessionCreated(handler: (response: ProfilerSessionCreatedParams) => any): void;
@@ -1812,6 +1813,19 @@ declare module 'sqlops' {
 		uri: string;
 		rowCount: number;
 		data: IProfilerTableRow;
+	}
+
+	export interface ProfilerFilter {
+		expressions: ProfilerFilterExpression[];
+		startTime?: Date;
+		endTime?: Date;
+		filterByTime: boolean;
+	}
+
+	export interface ProfilerFilterExpression {
+		field: string;
+		operator: string;
+		filter: string;
 	}
 
 	/**

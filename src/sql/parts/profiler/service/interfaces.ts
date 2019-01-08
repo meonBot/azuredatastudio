@@ -92,6 +92,14 @@ export interface IProfilerService {
 	 */
 	onSessionStopped(params: sqlops.ProfilerSessionStoppedParams): void;
 	/**
+	 * Filters the session
+	 */
+	filterSession(sessionId: ProfilerSessionID, filter: sqlops.ProfilerFilter): Thenable<boolean>;
+	/**
+	 * Clear the session filter
+	 */
+	clearSessionFilter(sessionId: ProfilerSessionID): Thenable<boolean>;
+	/**
 	 * Called by the service when a new profiler session is created by the dialog
 	 */
 	onProfilerSessionCreated(events: sqlops.ProfilerSessionCreatedParams);

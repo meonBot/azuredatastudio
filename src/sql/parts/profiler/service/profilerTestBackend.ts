@@ -121,4 +121,12 @@ export class ProfilerTestBackend implements sqlops.ProfilerProvider {
 		this.index = 0;
 		return TPromise.as(true);
 	}
+
+	filterSession(sessionId: string, filter: sqlops.ProfilerFilter): Thenable<boolean> {
+		return TPromise.as(true);
+	}
+
+	clearSessionFilter(sessionId: string): Thenable<boolean> {
+		return TPromise.as(true);
+	}
 }

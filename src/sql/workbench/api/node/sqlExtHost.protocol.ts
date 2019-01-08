@@ -357,6 +357,16 @@ export abstract class ExtHostDataProtocolShape {
 	$getXEventSessions(handle: number, sessionId: string): Thenable<string[]> { throw ni(); }
 
 	/**
+	 * Filter the session
+	 */
+	$filterSession(handle: number, sessionId: string, filter: sqlops.ProfilerFilter): Thenable<boolean> { throw ni(); }
+
+	/**
+	 * Clear the session filter
+	 */
+	$clearSessionFilter(handle: number, sessionId: string): Thenable<boolean> { throw ni(); }
+
+	/**
 	 * Get Agent Job list
 	 */
 	$getJobs(handle: number, ownerUri: string): Thenable<sqlops.AgentJobsResult> { throw ni(); }
