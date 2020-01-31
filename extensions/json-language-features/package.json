@@ -100,11 +100,11 @@
     }
   },
   "dependencies": {
-    "vscode-extension-telemetry": "0.0.18",
-    "vscode-languageclient": "^4.4.0",
-    "vscode-nls": "^3.2.4"
+    "vscode-extension-telemetry": "^0.1.2",
+    "vscode-languageclient": "^6.1.0",
+    "vscode-nls": "^4.1.1"
   },
   "devDependencies": {
-    "@types/node": "7.0.43"
+    "@types/node": "^13.5.3"
   }
 }
